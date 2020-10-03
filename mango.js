@@ -5,7 +5,7 @@ class Mango {
           restitution :0,
           friction :1,
       }
-      this.body = Bodies.circle(x,y,0,options);
+      this.body = Bodies.circle(x,y,30,options);
       this.diameter = 30;
       this.image = loadImage("mango.png");
       World.add(world, this.body);

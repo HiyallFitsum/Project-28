@@ -90,6 +90,7 @@ function mouseDragged(){
 
 function keyPressed() {
 	if (keyCode === 32) {
+		chain = new Chain(stone.body,{x:200, y:500});
 		Matter.Body.setPosition(stone.body, {x: 200, y:500})
 		launcherObject.attach(stone.body);
 		chain = new Chain(stone.body,{x:200, y:500});
@@ -101,7 +102,7 @@ mangoBodyPosition=lmango.body.position
 stoneBodyPosition=lstone.body.position
 
 var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-	if(distance<-lmango.diameter+lstone.width)
+	if(distance<=lmango.diameter+lstone.width)
 	{
 	 Matter.Body.setStatic(lmango.body, false);
 	}
